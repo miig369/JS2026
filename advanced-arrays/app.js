@@ -67,3 +67,30 @@ const fizzbuzz = (num) => {
 }
 
 console.log(fizzbuzz(15))
+
+
+/***
+ * MAX PROFIX
+ */
+
+const maxProfit = (prices) => {
+
+    let minPrice = prices[0]; //
+    let profit = 0;
+
+    for(let i = 1; i < prices.length; i++){
+        const currentPrice = prices[i];
+
+        minPrice = Math.min(minPrice, currentPrice);
+
+        const potentialProfit = currentPrice - minPrice;
+
+        profit = Math.max(profit, potentialProfit)
+
+    }
+    return profit;
+}
+
+const prices = [7, 1, 5, 4, 6, 3];
+
+console.log(maxProfit(prices))
